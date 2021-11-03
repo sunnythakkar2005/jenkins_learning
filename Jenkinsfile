@@ -30,7 +30,7 @@ pipeline {
 
         stage('Plan') {
             steps {
-                sh 'pwd;terraform init -input=false'
+                sh 'pwd;terraform init'
                 sh 'pwd;terraform workspace new ${environment}'
                 sh 'pwd;terraform workspace select ${environment}'
                 sh "pwd;terraform plan -input=false -out tfplan "
